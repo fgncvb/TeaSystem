@@ -1,0 +1,248 @@
+﻿html, body {
+    width: 100%;
+    height: 100%
+}
+
+body {
+    overflow-x: hidden;
+    color: #666;
+    font: 300 14px/1.8 Raleway,sans-serif;
+}
+
+body, div, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    /*sans-serif 非衬线字体 serif 衬线字体 font-size:14px;*/
+    /*设置为全篇字体颜色用的最多的颜色 节约后面的css代码 font-family:"微软雅黑",sans-serif;*/
+}
+
+body, div, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    /*sans-serif 非衬线字体 serif 衬线字体 font-size:14px;*/
+    /*设置为全篇字体颜色用的最多的颜色 节约后面的css代码 font-family:"微软雅黑",sans-serif;*/
+}
+
+button, img {
+    border: 0;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: #E7746F;
+}
+
+#lbl_msg {
+    color: red;
+    margin-left: 150px;
+    margin-top: -20px;
+}
+
+a:hover {
+    color: #999;
+    text-decoration: none;
+}
+
+.form-control, .navbar a {
+    -webkit-transition: all .4s ease-in-out 0s;
+    -moz-transition: all .4s ease-in-out 0s;
+    -o-transition: all .4s ease-in-out 0s;
+    transition: all .4s ease-in-out 0s;
+    -ms-transition: all .4s ease-in-out 0s;
+}
+
+.btn, a {
+    -webkit-transition: all 125ms ease-in-out 0s;
+    -moz-transition: all 125ms ease-in-out 0s;
+    -o-transition: all 125ms ease-in-out 0s;
+    transition: all 125ms ease-in-out 0s;
+    -ms-transition: all 125ms ease-in-out 0s;
+}
+
+.btn, .form-control, .form-control:focus, .form-control:hover, .navbar-custom .dropdown-menu {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.copyrights {
+    overflow: hidden;
+    height: 0;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font: 700 40px/1.2 Raleway,sans-serif;
+}
+
+h2 {
+    margin: 0 0 30px;
+    font-size: 30px;
+}
+
+h3 {
+    margin: 0 0 5px;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+h4 {
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+h5 {
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+h6 {
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+#filter li, .btn, .form-control, .iconbox, .input-group-addon, .progress, .scroll-up a {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.input-group .form-control {
+    z-index: auto;
+}
+
+.input-group-addon {
+    padding: 6px 15px;
+    border: 2px solid #D8E1E4;
+    background: #D8E1E4;
+    font-weight: 700;
+}
+
+li {
+    list-style: none
+}
+/*样式*/
+
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background: url(~/content/images/bg1.jpg) no-repeat;*/
+    background-image: url('../../Content/images/homebackimge.jpg');
+    background-size: 100% 100%;
+}
+
+.contentText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -220px;
+    margin-left: -240px;
+    width: 380px;
+    height: 410px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.42);
+}
+
+.contentText {
+    padding: 0 50px;
+}
+
+.contentTextH1 {
+    padding: 40px 0;
+    color: #10AE7B;
+    text-align: center;
+    font-size: 24px;
+}
+
+.contentTextInput {
+    padding: 10px 0 10px 46px;
+    width: 334px;
+    height: 26px;
+    border: 1px solid #e6e6e6;
+    border-radius: 100px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.contentTextLI {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.submitButton {
+    width: 380px;
+    height: 46px;
+    border: none;
+    border-radius: 100px;
+    background-color: #10AE7B;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+input[type=radio] + label::before {
+    display: inline-block;
+    margin-right: .4em;
+    padding: .1em;
+    width: .9em;
+    height: .9em;
+    border: 1px solid #01cd78;
+    border-radius: 50%;
+    content: "\a0";
+    vertical-align: middle;
+    text-indent: .15em;
+    font-size: 18px;
+    line-height: 1;
+}
+
+input[type=radio]:checked + label::before {
+    padding: .1em;
+    background-color: #01cd78;
+    background-clip: content-box;
+}
+
+input[type=radio] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+.maleSelcet {
+    float: left;
+    margin: 0px 40px 0 0;
+}
+
+.male {
+    margin: -20px 0 20px 20px;
+    height: 30px;
+    line-height: 30px
+}
+
+    .male:after {
+        content: '';
+        display: block;
+        clear: both
+    }

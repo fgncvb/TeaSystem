@@ -1,0 +1,141 @@
+﻿@using SystemUser_Module.Entity;
+@using BasicDataSystem.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理</title>
+    @{
+        SystemUser loginsystemuser = Session["LoginSystemUser"] as SystemUser;
+    }
+    <link href="~/Content/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/css/laydate.css" rel="stylesheet" />
+    <link href="~/Content/css/code.css" rel="stylesheet" />
+    <link href="~/Content/css/layer.css" rel="stylesheet" />
+    <link href="~/Content/css/index.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/laydate.js"></script>
+    <script src="~/Scripts/layer/layer.js"></script>
+    <script src="~/Scripts/layui.all.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <script src="~/Scripts/js-validate.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+
+        <div class="layui-header">
+            <div class="layui-logo" style="color: white;font-size: 18px;">后台管理系统</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:void(0);">
+                        <img src="@ConfigTool.ImageSource/image/@loginsystemuser.HeadPortrait" class="layui-nav-img">
+                        @loginsystemuser.RealName
+                    </a>
+                </li>
+                <li class="layui-nav-item Closelogon" id="exitLoinOut"> <a href="javascript:void(0)">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black" style="overflow-x: visible">
+            <div class="layui-side-scroll" style="overflow-x: visible">
+                <div class="NavigatioShrink">
+                    <i class="iconfont icon_daohang NavShrinkIcon" style="font-size: 18px;float: right;"></i>
+                </div>
+                <ul class="layui-nav layui-nav-tree leftList" lay-filter="test" style="padding: 0">
+                    <li class="layui-nav-item leftListTitleItem ">
+                        @*css layui-nav-itemed*@
+                        <a class="" href="javascript:;"><i class="iconfont icon_yonghu ShrinklistIcon"></i> <span class="leftListTitle">基础信息管理</span></a>
+                        <dl class="layui-nav-child leftListTitleDl">
+                            @{
+                                if (loginsystemuser.ManagerType == 1 || loginsystemuser.ManagerType == 0)
+                                {
+                                    <dd class="ShrinklistDl"><a href="/systemuser/systemuserlist.html">系统用户列表</a></dd>
+                                }
+                            }
+                            <dd class="ShrinklistDl"><a href="/school/schoollist.html">学校管理</a></dd>
+                            <dd class="ShrinklistDl"><a href="/grade/gradelist.html">年级管理</a></dd>
+                            <dd class="ShrinklistDl"><a href="/classes/calsseslist.html">班级管理</a></dd>
+                            <dd class="ShrinklistDl"><a href="/schoolgradeclass/schoolgradeclasslist.html">学校年级班级关联管理</a></dd>
+                            <dd class="ShrinklistDl"><a href="/teacher/teacherlist.html">教师列表</a></dd>
+                            <dd class="ShrinklistDl"><a href="/student/studentlist.html">学生列表</a></dd>
+                            <dd class="ShrinklistDl"><a href="/guardian/guardianlist.html">家长列表</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item leftListTitleItem">
+                        <a class="" href="javascript:;"><i class="iconfont icon_jiaocaibanben ShrinklistIcon"></i> <span class="leftListTitle">教材版本管理</span></a>
+                        <dl class="layui-nav-child leftListTitleDl">
+                            <dd class="ShrinklistDl"><a href="/press/presslist.html">出版社管理</a></dd>
+                            <dd class="ShrinklistDl"><a href="/teachingmaterial/teachingmateriallistindex.html">教材版本管理</a></dd>
+                            @{
+                                if (loginsystemuser.ManagerType == 1 || loginsystemuser.ManagerType == 0)
+                                {
+                                    <dd class="ShrinklistDl"><a href="/subject/subjectlistindex.html">科目管理</a></dd>
+                                    <dd class="ShrinklistDl"><a href="/knowledge/knowledgesetting.html">知识点管理</a></dd>
+                                }
+                            }
+                            <dd class="ShrinklistDl">  <a href="/chapter/chapterlist.html">科目章节管理</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body" style="bottom: 0;padding: 20px">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        var url = window.location.pathname;
+        //点击选中高亮
+        $(".ShrinklistDl a").each(function ()
+        {
+            if ($(this).attr("href") == url)
+            {
+                $(this).parent(".ShrinklistDl").addClass('layui-this');
+                $(this).parents(".leftListTitleItem").addClass('layui-nav-itemed');
+            }
+        });
+
+        //点击高亮
+        $(".leftListTitleItem a").each(function ()
+        {
+            $(this).click(function ()
+            {
+                $(this).parent(".ShrinklistDl").addClass('layui-this');
+                $(this).parents(".leftListTitleItem").addClass('layui-nav-itemed');
+            });
+        });
+
+        //退出
+        $("#exitLoinOut").click(function ()
+        {
+            //clearCookie1("haoxionggw");
+            layer.confirm('是否退出登录！', {
+                btn: ['确定', '取消'] //按钮
+            }, function ()
+            {
+                //layer.msg('添加成功', { icon: 1 });
+                $.cookie("loginsystemuser", '', { path: '/' });
+                //clearCookie1("haoxionggw");
+                window.location.href = "/home/login.html";
+            }, function ()
+            {
+                layer.msg('取消退出', { icon: 2 });
+                window.location.reload();
+            });
+        });
+
+
+    </script>
+</body>
+</html>

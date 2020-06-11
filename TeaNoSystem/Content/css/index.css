@@ -1,0 +1,389 @@
+/*系统用户管理*/
+
+.contentRight {
+    padding: 20px
+}
+
+.SystemManagementList {
+    border: 1px solid #aaaaaa;
+    padding: 30px;
+    margin-top: 5px
+}
+
+.currentLocation {
+    color: #333;
+    font-size: 14px
+}
+
+.tableSearchCriteria {
+    display: inline-block;
+    margin-right: 50px
+}
+/*.tableSearchCriteriaButton{width: 80px;height:30px;border: none;color: white;background-color: rgba(34, 34, 34, 0.7);border-radius: 5px;}*/
+.tableList {
+    border: 1px solid #e3e3e3;
+    margin-top: 10px;
+    width: 100%
+}
+/*.tableList tr:nth-child(odd){background-color:rgba(255, 0, 0, 0.08) }*/
+.tableListThTr {
+    height: 40px
+}
+
+tr {
+    height: 40px
+}
+
+.tableList tr:hover {
+    background-color: #eeeeee
+}
+
+td {
+    text-align: center
+}
+
+.tableImg {
+    height: 30px;
+    width: 30px
+}
+
+.tableDelect {
+    cursor: pointer
+}
+
+.editList:hover, .deleteList:hover, .tableDelectHover:hover {
+    color: #d77940;
+}
+
+.tableSmall {
+    width: 150px
+}
+
+.tableSmallMar {
+    width: 70px
+}
+
+.tableMiddle {
+    width: 80px
+}
+
+.tableTotalStatistics {
+    padding: 20px 0 0 10px;
+    font-size: 14px;
+    display: inline-block
+}
+
+.tableTotalPaging {
+    float: right;
+    margin: 5px 10px 0 0
+}
+
+.listAdd {
+    padding: 30px 30px 30px 0
+}
+
+.listButton {
+    margin: 0px 0px 0 132px;
+    display: inline-block
+}
+
+.NavigatioShrink {
+    height: 45px;
+    line-height: 45px;
+}
+
+.NavigatioShrinkIcon {
+    float: right
+}
+
+.layui-nav-item .ShrinklistDl {
+    padding-left: 18px
+}
+
+.NavShrinkIcon {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.width45 {
+    width: 45px
+}
+
+.widthTop {
+    width: 45px;
+    top: 10px
+}
+
+.redButton {
+    background-color: rgba(255, 0, 0, 0.87);
+    /*background-color: #393d49;*/
+}
+
+.checkAll {
+    display: inline-block;
+    margin: 0 30px;
+    font-size: 16px
+}
+
+    .checkAll > input {
+        margin-right: 10px;
+    }
+
+.floatRight {
+    float: right;
+}
+
+.Closelogon {
+    margin-left: 10px
+}
+/*新增*/
+.layui-upload-img {
+    width: 92px;
+    height: 92px;
+    margin: 0 10px 10px 110px;
+    margin-left: 70px;
+}
+
+.listAdd input {
+    width: 400px
+}
+
+.listAdd textarea {
+    width: 600px;
+    resize: none
+}
+
+/*编辑 焦点移入时搜索*/
+.Inputscreen {
+    position: absolute;
+    width: 398px;
+    height: auto;
+    display: none;
+    left: 110px;
+    border: 1px solid rgba(230,230,230,1);
+    border-top: none;
+    z-index: 10;
+    background-color: white
+}
+
+    .Inputscreen li {
+        height: 26px;
+        line-height: 26px;
+        padding-left: 5px;
+    }
+
+        .Inputscreen li:hover {
+            background-color: #eaeaea
+        }
+
+/*图书详情页*/
+iframe {
+    border: none;
+    height: 100%;
+    width: 100%
+}
+
+.boodetailsContent {
+    border: 1px solid #e4dddd;
+    margin-top: 10px;
+    min-height: 700px;
+    padding: 0
+}
+/*.listAddCatalog{width: 300px}*/
+.listAddCatalog {
+    background-color: #e8e8e8;
+    height: 100%
+}
+
+.inpuClass {
+    padding: 0 5px
+}
+
+.listAddContent, .listAddCatalog {
+    display: inline-block
+}
+
+.listAddContent {
+    vertical-align: top;
+    height: 100%;
+}
+
+.addDrectory, .addContentDeta {
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.87);
+    display: inline-block;
+    color: white;
+    padding: 5px 10px
+}
+
+    .addDrectory:hover {
+        background-color: rgba(255, 0, 0, 0.63)
+    }
+
+.addChapter {
+    color: red;
+    margin-left: 10px;
+    display: none
+}
+
+    .addChapter:hover {
+        color: #d77940
+    }
+
+/*字体图标*/
+
+@font-face {
+    font-family: "iconfont";
+    src: url('../font/iconfont.eot?t=1515380696886'); /* IE9*/
+    src: url('../font/iconfont.eot?t=1515380696886#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.ttf?t=1515380696886') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1515380696886#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_locationdot:before {
+    content: "\e605";
+}
+
+.icon_quanxian:before {
+    content: "\e606";
+}
+
+.icon_daohang:before {
+    content: "\e600";
+}
+
+.icon_yonghu:before {
+    content: "\e624";
+}
+
+.icon_jiaose:before {
+    content: "\e65c";
+}
+
+.icon_chubanshe:before {
+    content: "\e601";
+}
+
+.icon_tushu:before {
+    content: "\e686";
+}
+
+.icon-right:before {
+    content: "\e602";
+}
+
+.icon_banji:before {
+    content: "\e69d";
+}
+
+.icon_kemu:before {
+    content: "\e658";
+}
+
+.icon_jiaocaibanben:before {
+    content: "\e648";
+}
+
+.icon-shuben:before {
+    content: "\e607";
+}
+
+/*修改框架内容*/
+.layui-side-scroll {
+    width: 200px;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-laydate .layui-this {
+    background-color: rgba(255, 0, 0, 0.87) !important;
+}
+
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+    background-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-nav-tree .layui-nav-bar {
+    background-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+    background-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-layer-title {
+    background-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+    background-color: rgba(255, 0, 0, 0.87);
+    border-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-btn {
+    background-color: rgba(255, 0, 0, 0.87);
+    /*background-color: #393d49;*/
+}
+
+.layui-form-select {
+    width: 400px
+}
+
+.layui-form-item {
+    position: relative
+}
+
+.layui-this:after {
+}
+
+.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this {
+    background-color: rgba(255, 0, 0, 0.87);
+}
+
+.layui-nav .layui-nav-item a {
+    padding: 0 13px;
+}
+
+.addcss {
+    color: white
+}
+
+.ellipsis {
+    max-width: 200px;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用*/
+}
+
+.paging {
+    margin: 8px 0;
+    overflow: hidden;
+    text-align: right;
+}
+
+.paging a:hover {
+    background: #11a274;
+    border: 1px #0e8f61 solid;
+}
+
+.paging a {
+    background: #19a97b;
+    border: 1px #139667 solid;
+    color: white;
+    padding: 5px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+

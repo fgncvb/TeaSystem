@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    <link href="~/Content/css/login.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/layer/layer.js"></script>
+</head>
+<body id="body">
+    <div class="wrap">
+        <div style="margin-top:0px;  margin-left :0px;">
+            <div class="contentText">
+                <form>
+                    <h1 class="contentTextH1">基础数据后台管理</h1>
+                    <ul>
+                        <li class="contentTextLI"><label for="uesName" class="user_icon"></label><input type="text" class="contentTextInput" name="uesName" id="txtTeacherLoginID" placeholder="用户名" value="xuwenxiandisanzhongx"></li>
+                        <li class="contentTextLI"><label for="UpassWord" class="password_icon"></label><input autocomplete="off" type="password" class="contentTextInput" name="UpassWord" id="txtTeacherLoginPwd" placeholder="密码" value="123456">  </li>
+                    </ul>
+
+                    <input type="button" id="btnSubmit" value="登  录" class="submitButton">
+                    <br />
+
+                    <br />
+                    <img class="loginImg" hidden style="margin-left:80px;" src="~/Content/images/logining.gif" alt="登录中">
+                    <br />
+                    <label id="lbl_msg"></label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $("#btnSubmit").click(function ()
+        {
+            var TeacherLoginID = $.trim($("#txtTeacherLoginID").val());
+            if (TeacherLoginID == "")
+            {
+                $("#lbl_msg").html("请输入用户名!");
+                return false;
+            }
+
+            var TeacherLoginPwd = $.trim($("#txtTeacherLoginPwd").val());
+            if (TeacherLoginPwd == "")
+            {
+                $("#lbl_msg").html("请输入密码!");
+                return false;
+            }
+
+            var patrn = /^[0-9]*$/;
+            //if (patrn.test(TeacherLoginPwd))
+            //{
+            //    layer.alert('密码不能为纯数字');
+            //    return;
+            //}
+
+            if (TeacherLoginPwd.length < 6 || TeacherLoginPwd.length > 25)
+            {
+                $("#lbl_msg").html("密码必须在6-25位!");
+                return false;
+            }
+
+            var data = {
+                loginid: TeacherLoginID,
+                loginpassowrd: TeacherLoginPwd
+            };
+
+            $("#btnSubmit").hide(); // 开始登录，隐藏掉登录按钮
+            $(".loginImg").show();  // 开始登录，显示登录进度条
+            $("#lbl_msg").html(""); // 开始登录，清空之前的错误信息提示
+
+            $.ajax({
+                type: "post",
+                data: data,
+                url: "/home/login.html",
+                success: function (result)
+                {
+                    if (result == "1")
+                    {
+                        //window.location.href = "/homeindex.html";
+                        window.location.href = "/school/schoollist.html";                        
+                    }
+                    else
+                    {
+                        layer.alert(result);
+                        //layer.msg('登录失败，请检查账户和密码是否输入正确', { icon: 2 });
+                        window.location.reload();
+                    }
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
